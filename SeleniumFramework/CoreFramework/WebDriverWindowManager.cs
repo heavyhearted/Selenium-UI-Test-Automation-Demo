@@ -11,7 +11,7 @@ public static class WebDriverWindowManager
         wait.Until(d => d.WindowHandles.Count == numberOfWindows);
     }
     
-    public static void SwitchToNewWindow(this IWebDriver driver, int expectedWindowsCount = 2, int timeoutInSeconds = 10)
+    public static void SwitchToNewWindow(this IWebDriver driver, int expectedWindowsCount = 2, int timeoutInSeconds = 5)
     {
         driver.WaitForWindows(expectedWindowsCount, timeoutInSeconds);
         var newWindowHandle = driver.WindowHandles.Last();
