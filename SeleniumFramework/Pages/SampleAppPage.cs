@@ -1,15 +1,15 @@
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
 using SeleniumFramework.Locators;
-using static SeleniumFramework.CoreFramework.TestUrlConstants;
+using static SeleniumFramework.CoreFramework.WebAppTestUrls;
 
 namespace SeleniumFramework.Pages;
 
 public class SampleAppPage : BasePage
 {
-    private const string PageUnderTestUrl = $"{BaseUrl}{SampleApplicationLifecyclePath}";
-    
     private readonly SampleAppPageLocators _locators;
+    
+    public const string PageTitle = "Sample Application Lifecycle – Sprint 3";
     
     public SampleAppPage(IWebDriver driver)
         : this(driver, new SampleAppPageLocators())
@@ -24,7 +24,7 @@ public class SampleAppPage : BasePage
 
     public void Open()
     {
-        Driver.Navigate().GoToUrl(PageUnderTestUrl); 
+        Driver.Navigate().GoToUrl(SampleAppPageUrl); 
     }
     
     public string GetPageTitle()
