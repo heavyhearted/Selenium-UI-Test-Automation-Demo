@@ -12,14 +12,9 @@ namespace SeleniumFramework.Pages
         public const string PageTitle = "Push Higher Quality Software To Market Faster";
 
         public HomePage(IWebDriver driver)
-            : this(driver, new HomePageLocators())
-        {
-        }
-
-        public HomePage(IWebDriver driver, HomePageLocators locators)
             : base(driver)
         {
-            _locators = locators;
+            _locators = new HomePageLocators();
         }
         
         public override void Open()
