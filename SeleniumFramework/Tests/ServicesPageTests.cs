@@ -72,4 +72,18 @@ public class ServicesPageTests
             actualDescription.Should().Contain(expectedDescription);
         }
     }
+    
+    [Test]
+    public void ServicesPage_DiscoverySessionButton_ShouldRedirectToCorrectUrl()
+    {
+        _servicesPage.Open();
+    
+        _servicesPage.IsDiscoverySessionButtonVisible().Should().BeTrue();
+
+        _servicesPage.ClickDiscoverySessionButton();
+        
+        _driver.SwitchToNewWindow(ServicesPage.DiscoveryButtonRedirectUrl);
+
+        _driver.Url.Should().Be(ServicesPage.DiscoveryButtonRedirectUrl);
+    }
 }

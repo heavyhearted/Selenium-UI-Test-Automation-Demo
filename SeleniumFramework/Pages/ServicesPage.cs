@@ -1,6 +1,5 @@
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
-using SeleniumFramework.CoreFramework;
 using SeleniumFramework.CoreFramework.Utilities;
 using SeleniumFramework.Locators;
 
@@ -22,6 +21,8 @@ public class ServicesPage : BasePage
         { "Web, Mobile & API Automation", "At UltimateQA, we specialize in automating web, mobile, and API testing to enhance software quality and efficiency." },
         { "Web Development", "Beyond testing, we offer top-notch Web Development services to bring your digital vision to life." }
     };
+    
+    public const string DiscoveryButtonRedirectUrl = "https://forms.clickup.com/2314027/p/f/26ktb-6387/56LKNUZ9BDYXSC73SY/unlock-your-automation-potentialwitha-free-framework-assessment";
     
     public ServicesPage(IWebDriver driver)
         : this(driver, new ServicesPageLocators())
