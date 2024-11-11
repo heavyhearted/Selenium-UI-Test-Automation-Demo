@@ -1,0 +1,114 @@
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Rider IDE specific files
+.idea/
+*.sln.iml
+
+# Rider plugin logs
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/libraries
+.idea/.rider_local_history/
+.idea/.idea_modules/
+.idea/.rider_jslintrc
+
+# User-specific Rider files
+.idea/**/user.xml
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+
+# Build output directories
+/build/
+bin/
+obj/
+
+# Rider specific settings directory
+.idea/
+
+# Rider workspace settings
+.idea/workspace.xml
+
+# C# specific files
+*.exe
+*.dll
+*.pdb
+*.cache
+*.mdb
+*.log
+
+# Mono auto generated files
+mono_crash.*
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Visual Studio folder
+.vscode/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# SVN directories
+.svn/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# NuGet packages
+*.nupkg
+*.snupkg
+
+# Web server settings
+.vs/
+
+# Node modules (if applicable)
+node_modules/
+
+# JetBrains Rider Logs
+.idea/logs/
+.idea/usage.statistics.xml
+
+# JetBrains Rider temporary files
+.idea/markdown-navigator-enh/
+
+# Resharper folders
+.ReSharper*/
+resharper-logs/
+
+# DotNet compile time logs
+dotnet_compile_time.log

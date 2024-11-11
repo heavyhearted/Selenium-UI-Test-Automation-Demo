@@ -1,0 +1,12 @@
+{
+  "BrowserSettings": {
+    "BrowserType": "Edge",
+    "Arguments": [
+      "--headless"
+    ],
+    "AdditionalCapabilities": {
+      "windowHeight": "500",
+      "windowWidth": "500"
+    }
+  }
+}
