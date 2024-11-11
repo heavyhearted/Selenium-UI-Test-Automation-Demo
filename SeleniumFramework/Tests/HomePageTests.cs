@@ -1,6 +1,7 @@
 using FluentAssertions;
 using OpenQA.Selenium;
 using SeleniumFramework.CoreFramework;
+using SeleniumFramework.CoreFramework.Utilities;
 using SeleniumFramework.Pages;
 using SeleniumFramework.Sections;
 
@@ -31,7 +32,7 @@ public class HomePageTests
     }
     
     [Test]
-    public void HeaderLogo_ShouldBeVisible_OnHomePage()
+    public void HomePage_HeaderLogo_ShouldBeVisible_OnHomePage()
     {
         _homePage.Open();
 
@@ -40,7 +41,7 @@ public class HomePageTests
     
     
     [Test]
-    public void FooterLogo_ShouldBeVisible_OnHomePage()
+    public void HomePage_FooterLogo_ShouldBeVisible_OnHomePage()
     {
         _homePage.Open();
         
@@ -48,7 +49,7 @@ public class HomePageTests
     }
     
     [Test]
-    public void CopyrightText_ShouldBePresent()
+    public void HomePage_CopyrightText_ShouldBePresent()
     {
         _homePage.Open();
         var copyrightText = _homePage.GetCopyrightText(); 
@@ -56,32 +57,30 @@ public class HomePageTests
     }
 
     [Test]
-    public void TermsOfUse_ShouldBeVisible_AndHasCorrectRedirect()
+    public void HomePage_TermsOfUse_ShouldBeVisible_AndHasCorrectRedirect()
     {
         _homePage.Open();
         
-        _homePage.FooterSection.IsTermsAndConditionsVisible().Should().BeTrue();
+        _homePage.IsTermsAndConditionsVisible().Should().BeTrue();
         
-        _homePage.FooterSection.ClickTermsAndConditions();
+        _homePage.ClickTermsAndConditions();
         
         _driver.SwitchToNewWindow();
         
-        _driver.Url.Should().Be(WebAppTestUrls.TermsOfUseUrl); 
+        _driver.Url.Should().Be(WebAppUrls.TermsOfUseUrl); 
     }
 
     [Test]
-    public void PrivacyPolicy_ShouldBeVisible_AndHasCorrectRedirect()
+    public void HomePage_PrivacyPolicy_ShouldBeVisible_AndHasCorrectRedirect()
     {
         _homePage.Open();
         
-        _homePage.FooterSection.IsPrivacyPolicyVisible().Should().BeTrue();
+        _homePage.IsPrivacyPolicyVisible().Should().BeTrue();
         
-        _homePage.FooterSection.ClickPrivacyPolicy();
+        _homePage.ClickPrivacyPolicy();
         
         _driver.SwitchToNewWindow();
         
-        _driver.Url.Should().Be(WebAppTestUrls.PrivacyPolicyUrl); 
+        _driver.Url.Should().Be(WebAppUrls.PrivacyPolicyUrl); 
     }
-    
-
 }

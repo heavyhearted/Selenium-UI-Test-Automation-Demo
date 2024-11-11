@@ -12,11 +12,16 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;
   &lt;Assembly Path="/Users/desislava.dimitrova/.nuget/packages/selenium.webdriver/4.25.0/lib/net8.0/WebDriver.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a90e794a_002D8fc1_002D49c1_002D8aac_002D4b619170f96e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="HeaderLogo_ShouldBeVisible_OnHomePage" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::B95108DF-A09F-47CE-8DD5-BCD8683EF700::net8.0::SeleniumFramework.Tests.HomePageTests.HeaderLogo_ShouldBeVisible_OnHomePage&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=af3c8b40_002D800c_002D40b1_002D9a36_002D179018b9310d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from &amp;lt;SeleniumFramework&amp;gt;" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Project Location="/Users/desislava.dimitrova/RiderProjects/SeleniumWebDriver/SeleniumFramework" Presentation="&amp;lt;SeleniumFramework&amp;gt;" /&gt;
 &lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

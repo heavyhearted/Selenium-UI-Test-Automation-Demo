@@ -1,4 +1,4 @@
-namespace SeleniumFramework.CoreFramework;
+namespace SeleniumFramework.CoreFramework.Enums;
 
 public enum BrowserType
 {

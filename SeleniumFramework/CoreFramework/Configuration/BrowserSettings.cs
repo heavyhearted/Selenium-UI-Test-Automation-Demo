@@ -1,4 +1,6 @@
-namespace SeleniumFramework.CoreFramework;
+using SeleniumFramework.CoreFramework.Enums;
+
+namespace SeleniumFramework.CoreFramework.Configuration;
 
 public class BrowserSettings
 {
