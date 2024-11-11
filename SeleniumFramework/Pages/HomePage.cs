@@ -1,8 +1,7 @@
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
-using SeleniumFramework.CoreFramework;
+using SeleniumFramework.CoreFramework.Utilities;
 using SeleniumFramework.Locators;
-using SeleniumFramework.Sections;
 
 namespace SeleniumFramework.Pages
 {
@@ -25,10 +24,10 @@ namespace SeleniumFramework.Pages
         
         public override void Open()
         {
-            Driver.Navigate().GoToUrl(WebAppTestUrls.HomePageUrl); 
+            Driver.Navigate().GoToUrl(WebAppUrls.HomePageUrl); 
         }
         
-        public string GetPageTitle()
+        public override string GetPageTitle()
         {
             var titleElement = Wait.Until(ExpectedConditions.ElementIsVisible(_locators.MainTitle));
             return titleElement.Text;

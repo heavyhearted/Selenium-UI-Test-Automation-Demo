@@ -3,6 +3,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
+using SeleniumFramework.CoreFramework.Configuration;
+using SeleniumFramework.CoreFramework.Enums;
 
 namespace SeleniumFramework.CoreFramework
 {

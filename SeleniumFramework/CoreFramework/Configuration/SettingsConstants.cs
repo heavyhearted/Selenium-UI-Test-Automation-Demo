@@ -1,4 +1,4 @@
-namespace SeleniumFramework.CoreFramework;
+namespace SeleniumFramework.CoreFramework.Configuration;
 
 public static class SettingsConstants
 {

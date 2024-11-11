@@ -1,7 +1,7 @@
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
 using SeleniumFramework.Locators;
-using static SeleniumFramework.CoreFramework.WebAppTestUrls;
+using static SeleniumFramework.CoreFramework.Utilities.WebAppUrls;
 
 namespace SeleniumFramework.Pages;
 
@@ -27,7 +27,7 @@ public class SampleAppPage : BasePage
         Driver.Navigate().GoToUrl(SampleAppPageUrl); 
     }
     
-    public string GetPageTitle()
+    public override string GetPageTitle()
     {
         var titleElement = Wait.Until
             (ExpectedConditions.ElementIsVisible(_locators.MainTitle)); 

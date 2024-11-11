@@ -31,6 +31,8 @@ public abstract class BasePage
     
     public abstract void Open();
     
+    public abstract string GetPageTitle();
+    
     public bool IsHeaderLogoVisible() => _headerSection.IsHeaderLogoVisible();
         
     public bool IsFooterLogoVisible() => _footerSection.IsFooterLogoVisible();

@@ -1,6 +1,6 @@
-namespace SeleniumFramework.CoreFramework;
+namespace SeleniumFramework.CoreFramework.Utilities;
 
-public static class WebAppTestUrls
+public static class WebAppUrls
 {
     // Base URLs
     private const string BaseUrl = "https://ultimateqa.com";
@@ -10,12 +10,13 @@ public static class WebAppTestUrls
     private const string TermsOfUsePath = "/pages/terms";
     private const string PrivacyPolicyPath = "/pages/privacy";
     private const string SampleApplicationLifecyclePath = "/sample-application-lifecycle-sprint-3";
+    private const string ServicesPath = "/consulting/";
 
     // Full URLs
     public const string HomePageUrl = $"{BaseUrl}";
     public const string TermsOfUseUrl = $"{CoursesBaseUrl}{TermsOfUsePath}";
     public const string PrivacyPolicyUrl = $"{CoursesBaseUrl}{PrivacyPolicyPath}";
     public const string SampleAppPageUrl = $"{BaseUrl}{SampleApplicationLifecyclePath}";
-    
+    public const string ServicesPageUrl = $"{BaseUrl}{ServicesPath}";
 }
     

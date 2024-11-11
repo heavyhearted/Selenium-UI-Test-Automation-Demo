@@ -1,8 +1,13 @@
+using System.Web;
 using Bogus;
 using FluentAssertions;
 using OpenQA.Selenium;
 using SeleniumFramework.CoreFramework;
+using SeleniumFramework.CoreFramework.Enums;
+using SeleniumFramework.CoreFramework.Models;
 using SeleniumFramework.Pages;
+using SeleniumFramework.Sections;
+using static SeleniumFramework.CoreFramework.Utilities.ApplicationFormUrlHelper;
 
 namespace SeleniumFramework.Tests;
 
@@ -16,6 +21,13 @@ public class SampleAppPageTests
     private SampleAppPage _sampleAppPage;
     private HomePage _homePage;
     private Faker _faker;
+    
+    private string GenerateExpectedUrl(TestUser testUser)
+    {
+        var encodedFirstName = HttpUtility.UrlEncode(testUser.FirstName);
+        var encodedLastName = HttpUtility.UrlEncode(testUser.LastName);
+        return $"https://ultimateqa.com/?gender={testUser.Gender.ToString().ToLower()}&firstname={encodedFirstName}&lastname={encodedLastName}";
+    }
 
     [SetUp]
     public void Setup()
@@ -35,12 +47,11 @@ public class SampleAppPageTests
         _driver.Quit(); 
         _driver.Dispose(); 
     }
-
     
     [TestCase(GenderType.Male)]
     [TestCase(GenderType.Female)]
     [TestCase(GenderType.Other)]
-    public void ApplicationForm_IsSuccessfullySubmitted(GenderType gender)
+    public void SampleAppPage_ApplicationForm_IsSuccessfullySubmitted(GenderType gender)
     {
         _sampleAppPage.Open();
         
@@ -52,10 +63,11 @@ public class SampleAppPageTests
         _sampleAppPage.SelectGender(testUser.Gender.ToString()); 
         _sampleAppPage.FillOutFormAndSubmit(testUser.FirstName, testUser.LastName);
         
+        var expectedUrl = GenerateApplicationFormSubmissionUrl(testUser);
         var currentUrl = _driver.Url;
-        currentUrl.Should().Be($"https://ultimateqa.com/?gender={testUser.Gender.ToString().ToLower()}&firstname={testUser.FirstName}&lastname={testUser.LastName}");
+        currentUrl.Should().Be(expectedUrl);
         
-        var pageRedirectedAfterSubmission = _homePage.GetMainTitleText();
+        var pageRedirectedAfterSubmission = _homePage.GetPageTitle();
         pageRedirectedAfterSubmission.Should().Be(HomePage.PageTitle);
     }
 }

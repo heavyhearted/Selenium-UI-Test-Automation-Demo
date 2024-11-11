@@ -1,6 +1,7 @@
 using FluentAssertions;
 using OpenQA.Selenium;
 using SeleniumFramework.CoreFramework;
+using SeleniumFramework.CoreFramework.Utilities;
 using SeleniumFramework.Pages;
 using SeleniumFramework.Sections;
 
@@ -66,7 +67,7 @@ public class HomePageTests
         
         _driver.SwitchToNewWindow();
         
-        _driver.Url.Should().Be(WebAppTestUrls.TermsOfUseUrl); 
+        _driver.Url.Should().Be(WebAppUrls.TermsOfUseUrl); 
     }
 
     [Test]
@@ -80,6 +81,6 @@ public class HomePageTests
         
         _driver.SwitchToNewWindow();
         
-        _driver.Url.Should().Be(WebAppTestUrls.PrivacyPolicyUrl); 
+        _driver.Url.Should().Be(WebAppUrls.PrivacyPolicyUrl); 
     }
 }
