@@ -31,7 +31,7 @@ public abstract class BasePage
     
     public abstract void Open();
     
-    public abstract string GetPageTitle();
+    public abstract string GetMainSectionTitle();
     
     public bool IsHeaderLogoVisible() => _headerSection.IsHeaderLogoVisible();
         

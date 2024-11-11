@@ -112,3 +112,6 @@ resharper-logs/
 
 # DotNet compile time logs
 dotnet_compile_time.log
+
+# Selenium Files
+SeleniumWebDriver.sln.DotSettings.user

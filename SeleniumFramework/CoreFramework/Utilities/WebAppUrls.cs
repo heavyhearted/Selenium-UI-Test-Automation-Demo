@@ -11,6 +11,7 @@ public static class WebAppUrls
     private const string PrivacyPolicyPath = "/pages/privacy";
     private const string SampleApplicationLifecyclePath = "/sample-application-lifecycle-sprint-3";
     private const string ServicesPath = "/consulting/";
+    private const string BlogPath = "/blog";
 
     // Full URLs
     public const string HomePageUrl = $"{BaseUrl}";
@@ -18,5 +19,6 @@ public static class WebAppUrls
     public const string PrivacyPolicyUrl = $"{CoursesBaseUrl}{PrivacyPolicyPath}";
     public const string SampleAppPageUrl = $"{BaseUrl}{SampleApplicationLifecyclePath}";
     public const string ServicesPageUrl = $"{BaseUrl}{ServicesPath}";
+    public const string BlogPageUrl = $"{BaseUrl}{BlogPath}";
 }
     

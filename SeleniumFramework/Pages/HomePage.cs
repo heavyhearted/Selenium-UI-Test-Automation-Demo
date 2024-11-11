@@ -27,7 +27,7 @@ namespace SeleniumFramework.Pages
             Driver.Navigate().GoToUrl(WebAppUrls.HomePageUrl); 
         }
         
-        public override string GetPageTitle()
+        public override string GetMainSectionTitle()
         {
             var titleElement = Wait.Until(ExpectedConditions.ElementIsVisible(_locators.MainTitle));
             return titleElement.Text;

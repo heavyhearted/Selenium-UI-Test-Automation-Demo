@@ -65,7 +65,7 @@ public class HomePageTests
         
         _homePage.ClickTermsAndConditions();
         
-        _driver.SwitchToNewWindow();
+        _driver.SwitchToNewWindow(WebAppUrls.TermsOfUseUrl);
         
         _driver.Url.Should().Be(WebAppUrls.TermsOfUseUrl); 
     }
@@ -79,7 +79,7 @@ public class HomePageTests
         
         _homePage.ClickPrivacyPolicy();
         
-        _driver.SwitchToNewWindow();
+        _driver.SwitchToNewWindow(WebAppUrls.PrivacyPolicyUrl);
         
         _driver.Url.Should().Be(WebAppUrls.PrivacyPolicyUrl); 
     }

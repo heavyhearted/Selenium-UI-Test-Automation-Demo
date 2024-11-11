@@ -7,7 +7,7 @@ using SeleniumFramework.CoreFramework.Enums;
 using SeleniumFramework.CoreFramework.Models;
 using SeleniumFramework.Pages;
 using SeleniumFramework.Sections;
-using static SeleniumFramework.CoreFramework.Utilities.ApplicationFormUrlHelper;
+using static SeleniumFramework.CoreFramework.Utilities.WebAppUrlValidationHelper;
 
 namespace SeleniumFramework.Tests;
 
@@ -55,7 +55,7 @@ public class SampleAppPageTests
     {
         _sampleAppPage.Open();
         
-        var samplePageTitle = _sampleAppPage.GetPageTitle();
+        var samplePageTitle = _sampleAppPage.GetMainSectionTitle();
         samplePageTitle.Should().Be(SampleAppPage.PageTitle);
         
         var testUser = new TestUser(_faker.Name.FirstName(), _faker.Name.LastName(), gender);
@@ -67,7 +67,7 @@ public class SampleAppPageTests
         var currentUrl = _driver.Url;
         currentUrl.Should().Be(expectedUrl);
         
-        var pageRedirectedAfterSubmission = _homePage.GetPageTitle();
+        var pageRedirectedAfterSubmission = _homePage.GetMainSectionTitle();
         pageRedirectedAfterSubmission.Should().Be(HomePage.PageTitle);
     }
 }

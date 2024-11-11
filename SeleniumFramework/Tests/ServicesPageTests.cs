@@ -36,7 +36,7 @@ public class ServicesPageTests
     {
         _servicesPage.Open();
         
-        var servicesPageTitle = _servicesPage.GetPageTitle();
+        var servicesPageTitle = _servicesPage.GetMainSectionTitle();
         servicesPageTitle.Should().Be(ServicesPage.PageTitle);
         
         _servicesPage.IsHeroSectionVisible().Should().BeTrue();

@@ -49,6 +49,8 @@ namespace SeleniumFramework.CoreFramework
             return _driver;
         }
         
+        // Each browser type requires its own Options class because each browser has a unique set of options and WebDriver implementation.
+        
         private ChromeOptions GetChromeOptions()
         {
             var options = new ChromeOptions();
