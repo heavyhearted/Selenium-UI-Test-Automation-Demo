@@ -27,7 +27,7 @@ namespace SeleniumFramework.Pages
             _footerSection = new FooterSection(driver);
         }
         
-        public void Open()
+        public override void Open()
         {
             Driver.Navigate().GoToUrl(WebAppTestUrls.HomePageUrl); 
         }
@@ -43,8 +43,12 @@ namespace SeleniumFramework.Pages
         public bool IsFooterLogoVisible() => _footerSection.IsFooterLogoVisible();
         
         public string GetCopyrightText() => _footerSection.GetCopyrightText(); 
-        
-        public FooterSection FooterSection => _footerSection;
-        
+        public bool IsTermsAndConditionsVisible() => _footerSection.IsTermsAndConditionsVisible();
+    
+        public void ClickTermsAndConditions() => _footerSection.ClickTermsAndConditions();
+    
+        public bool IsPrivacyPolicyVisible() => _footerSection.IsPrivacyPolicyVisible();
+    
+        public void ClickPrivacyPolicy() => _footerSection.ClickPrivacyPolicy();
     }
 }

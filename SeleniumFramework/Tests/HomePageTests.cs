@@ -60,9 +60,9 @@ public class HomePageTests
     {
         _homePage.Open();
         
-        _homePage.FooterSection.IsTermsAndConditionsVisible().Should().BeTrue();
+        _homePage.IsTermsAndConditionsVisible().Should().BeTrue();
         
-        _homePage.FooterSection.ClickTermsAndConditions();
+        _homePage.ClickTermsAndConditions();
         
         _driver.SwitchToNewWindow();
         
@@ -74,9 +74,9 @@ public class HomePageTests
     {
         _homePage.Open();
         
-        _homePage.FooterSection.IsPrivacyPolicyVisible().Should().BeTrue();
+        _homePage.IsPrivacyPolicyVisible().Should().BeTrue();
         
-        _homePage.FooterSection.ClickPrivacyPolicy();
+        _homePage.ClickPrivacyPolicy();
         
         _driver.SwitchToNewWindow();
         

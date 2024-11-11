@@ -3,7 +3,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumFramework.Pages;
 
-public class BasePage
+public abstract class BasePage
 {
     protected readonly IWebDriver Driver;
     protected readonly DefaultWait<IWebDriver> Wait;
@@ -22,4 +22,6 @@ public class BasePage
             typeof(NoSuchElementException), 
             typeof(StaleElementReferenceException));
     }
+    
+    public abstract void Open();
 }
