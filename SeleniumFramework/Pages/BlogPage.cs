@@ -13,7 +13,6 @@ public class BlogPage : BasePage
     public const string MainSectionTitle = "Blog Our latest tech discussions!";
 
     public BlogPage(IWebDriver driver)
-    
         : base(driver)
     {
         _locators = new BlogPageLocators();
