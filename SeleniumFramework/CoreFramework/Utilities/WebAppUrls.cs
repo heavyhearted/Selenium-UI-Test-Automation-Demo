@@ -12,6 +12,7 @@ public static class WebAppUrls
     private const string SampleApplicationLifecyclePath = "/sample-application-lifecycle-sprint-3";
     private const string ServicesPath = "/consulting/";
     private const string BlogPath = "/blog";
+    private const string AboutPath = "/about";
 
     // Full URLs
     public const string HomePageUrl = $"{BaseUrl}";
@@ -20,5 +21,6 @@ public static class WebAppUrls
     public const string SampleAppPageUrl = $"{BaseUrl}{SampleApplicationLifecyclePath}";
     public const string ServicesPageUrl = $"{BaseUrl}{ServicesPath}";
     public const string BlogPageUrl = $"{BaseUrl}{BlogPath}";
+    public const string AboutPageUrl = $"{BaseUrl}{AboutPath}";
 }
     
