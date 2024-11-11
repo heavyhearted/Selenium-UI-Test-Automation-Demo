@@ -25,14 +25,9 @@ public class ServicesPage : BasePage
     public const string DiscoveryButtonRedirectUrl = "https://forms.clickup.com/2314027/p/f/26ktb-6387/56LKNUZ9BDYXSC73SY/unlock-your-automation-potentialwitha-free-framework-assessment";
     
     public ServicesPage(IWebDriver driver)
-        : this(driver, new ServicesPageLocators())
-    {
-    }
-
-    public ServicesPage(IWebDriver driver, ServicesPageLocators locators)
         : base(driver)
     {
-        _locators = locators;
+        _locators = new ServicesPageLocators();
     }
 
     public override void Open()

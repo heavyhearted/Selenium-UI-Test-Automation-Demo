@@ -39,6 +39,14 @@ public class HomePageTests
         _homePage.IsHeaderLogoVisible().Should().BeTrue();
     }
     
+    [Test]
+    public void HomePage_Title_ShouldBeCorrect()
+    {
+        _homePage.Open();
+    
+        _homePage.GetMainSectionTitle().Should().Be(HomePage.PageTitle);
+    }
+    
     
     [Test]
     public void HomePage_FooterLogo_ShouldBeVisible_OnHomePage()

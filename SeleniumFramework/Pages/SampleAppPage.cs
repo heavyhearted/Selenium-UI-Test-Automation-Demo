@@ -12,14 +12,9 @@ public class SampleAppPage : BasePage
     public const string PageTitle = "Sample Application Lifecycle – Sprint 3";
     
     public SampleAppPage(IWebDriver driver)
-        : this(driver, new SampleAppPageLocators())
-    {
-    }
-    
-    private SampleAppPage(IWebDriver driver, SampleAppPageLocators locators)
         : base(driver)
     {
-        _locators = locators;
+        _locators = new SampleAppPageLocators();
     }
 
     public override void Open()
