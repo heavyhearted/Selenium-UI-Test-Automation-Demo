@@ -2,6 +2,7 @@ using FluentAssertions;
 using OpenQA.Selenium;
 using SeleniumFramework.CoreFramework;
 using SeleniumFramework.Pages;
+using SeleniumFramework.Sections;
 
 namespace SeleniumFramework.Tests;
 
@@ -51,7 +52,7 @@ public class HomePageTests
     {
         _homePage.Open();
         var copyrightText = _homePage.GetCopyrightText(); 
-        copyrightText.Should().Contain("© NextLevel Solutions USA, LLC"); 
+        copyrightText.Should().Contain(FooterSection.CopyrightText); 
     }
 
     [Test]
@@ -65,7 +66,7 @@ public class HomePageTests
         
         _driver.SwitchToNewWindow();
         
-        _driver.Url.Should().Be(TestUrlConstants.TermsOfUseUrl); 
+        _driver.Url.Should().Be(WebAppTestUrls.TermsOfUseUrl); 
     }
 
     [Test]
@@ -79,7 +80,7 @@ public class HomePageTests
         
         _driver.SwitchToNewWindow();
         
-        _driver.Url.Should().Be(TestUrlConstants.PrivacyPolicyUrl); 
+        _driver.Url.Should().Be(WebAppTestUrls.PrivacyPolicyUrl); 
     }
     
 

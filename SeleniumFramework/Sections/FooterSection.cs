@@ -10,6 +10,8 @@ namespace SeleniumFramework.Sections
         private readonly IWebDriver _driver;
         private readonly FooterSectionLocators _locators;
         private readonly WebDriverWait _wait;
+        
+        public const string CopyrightText = "© NextLevel Solutions USA, LLC";
 
         public FooterSection(IWebDriver driver)
         {
