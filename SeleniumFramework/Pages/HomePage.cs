@@ -1,17 +1,18 @@
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
+using SeleniumFramework.CoreFramework;
 using SeleniumFramework.Locators;
 using SeleniumFramework.Sections;
-using static SeleniumFramework.CoreFramework.TestUrlConstants;
 
 namespace SeleniumFramework.Pages
 {
     public class HomePage : BasePage
     {
-        private const string PageUnderTestUrl = HomePageUrl;
         private readonly HomePageLocators _locators;  
         private readonly HeaderSection _headerSection;
         private readonly FooterSection _footerSection;
+        
+        public const string PageTitle = "Push Higher Quality Software To Market Faster";
 
         public HomePage(IWebDriver driver)
             : this(driver, new HomePageLocators())
@@ -28,9 +29,15 @@ namespace SeleniumFramework.Pages
         
         public void Open()
         {
-            Driver.Navigate().GoToUrl(PageUnderTestUrl); 
+            Driver.Navigate().GoToUrl(WebAppTestUrls.HomePageUrl); 
         }
         
+        public string GetMainTitleText()
+        {
+            var titleElement = Wait.Until(ExpectedConditions.ElementIsVisible(_locators.MainTitle));
+            return titleElement.Text;
+        }
+
         public bool IsHeaderLogoVisible() => _headerSection.IsHeaderLogoVisible();
         
         public bool IsFooterLogoVisible() => _footerSection.IsFooterLogoVisible();
