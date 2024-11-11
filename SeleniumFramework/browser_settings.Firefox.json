@@ -1,0 +1,12 @@
+{
+  "BrowserSettings": {
+    "BrowserType": "Firefox",
+    "Arguments": [
+
+    ],
+    "AdditionalCapabilities": {
+      "windowHeight": "1080",
+      "windowWidth": "1920"
+    }
+  }
+}
