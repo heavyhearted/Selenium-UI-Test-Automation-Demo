@@ -31,7 +31,7 @@ public class HomePageTests
     }
     
     [Test]
-    public void HeaderLogo_ShouldBeVisible_OnHomePage()
+    public void HomePage_HeaderLogo_ShouldBeVisible_OnHomePage()
     {
         _homePage.Open();
 
@@ -40,7 +40,7 @@ public class HomePageTests
     
     
     [Test]
-    public void FooterLogo_ShouldBeVisible_OnHomePage()
+    public void HomePage_FooterLogo_ShouldBeVisible_OnHomePage()
     {
         _homePage.Open();
         
@@ -48,7 +48,7 @@ public class HomePageTests
     }
     
     [Test]
-    public void CopyrightText_ShouldBePresent()
+    public void HomePage_CopyrightText_ShouldBePresent()
     {
         _homePage.Open();
         var copyrightText = _homePage.GetCopyrightText(); 
@@ -56,7 +56,7 @@ public class HomePageTests
     }
 
     [Test]
-    public void TermsOfUse_ShouldBeVisible_AndHasCorrectRedirect()
+    public void HomePage_TermsOfUse_ShouldBeVisible_AndHasCorrectRedirect()
     {
         _homePage.Open();
         
@@ -70,7 +70,7 @@ public class HomePageTests
     }
 
     [Test]
-    public void PrivacyPolicy_ShouldBeVisible_AndHasCorrectRedirect()
+    public void HomePage_PrivacyPolicy_ShouldBeVisible_AndHasCorrectRedirect()
     {
         _homePage.Open();
         
@@ -82,6 +82,4 @@ public class HomePageTests
         
         _driver.Url.Should().Be(WebAppTestUrls.PrivacyPolicyUrl); 
     }
-    
-
 }

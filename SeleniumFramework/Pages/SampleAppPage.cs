@@ -16,13 +16,13 @@ public class SampleAppPage : BasePage
     {
     }
     
-    public SampleAppPage(IWebDriver driver, SampleAppPageLocators locators)
+    private SampleAppPage(IWebDriver driver, SampleAppPageLocators locators)
         : base(driver)
     {
         _locators = locators;
     }
 
-    public void Open()
+    public override void Open()
     {
         Driver.Navigate().GoToUrl(SampleAppPageUrl); 
     }
