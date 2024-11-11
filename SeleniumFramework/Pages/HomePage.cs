@@ -43,6 +43,7 @@ namespace SeleniumFramework.Pages
         public bool IsFooterLogoVisible() => _footerSection.IsFooterLogoVisible();
         
         public string GetCopyrightText() => _footerSection.GetCopyrightText(); 
+        
         public bool IsTermsAndConditionsVisible() => _footerSection.IsTermsAndConditionsVisible();
     
         public void ClickTermsAndConditions() => _footerSection.ClickTermsAndConditions();
