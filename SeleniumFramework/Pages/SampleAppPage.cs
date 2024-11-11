@@ -27,7 +27,7 @@ public class SampleAppPage : BasePage
         Driver.Navigate().GoToUrl(SampleAppPageUrl); 
     }
     
-    public override string GetPageTitle()
+    public override string GetMainSectionTitle()
     {
         var titleElement = Wait.Until
             (ExpectedConditions.ElementIsVisible(_locators.MainTitle)); 
