@@ -10,25 +10,14 @@ namespace SeleniumFramework.Tests;
 [TestFixture] 
 [Parallelizable(ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
-public class HomePageTests
+public class HomePageTests : BaseTest
 {
-    private IWebDriver _driver;
     private HomePage _homePage;
-    private WebDriverFactory _webDriverFactory;
     
     [SetUp]
     public void Setup()
     {
-        _webDriverFactory = new WebDriverFactory();
-        _driver = _webDriverFactory.GetWebDriver();
-        _homePage = new HomePage(_driver);
-    }
-
-    [TearDown]
-    public void TearDown()
-    {
-        _driver.Quit(); 
-        _driver.Dispose(); 
+        _homePage = new HomePage(Driver);
     }
     
     [Test]
@@ -73,9 +62,9 @@ public class HomePageTests
         
         _homePage.ClickTermsAndConditions();
         
-        _driver.SwitchToNewWindow(WebAppUrls.TermsOfUseUrl);
+        Driver.SwitchToNewWindow(WebAppUrls.TermsOfUseUrl);
         
-        _driver.Url.Should().Be(WebAppUrls.TermsOfUseUrl); 
+        Driver.Url.Should().Be(WebAppUrls.TermsOfUseUrl); 
     }
 
     [Test]
@@ -87,8 +76,8 @@ public class HomePageTests
         
         _homePage.ClickPrivacyPolicy();
         
-        _driver.SwitchToNewWindow(WebAppUrls.PrivacyPolicyUrl);
+        Driver.SwitchToNewWindow(WebAppUrls.PrivacyPolicyUrl);
         
-        _driver.Url.Should().Be(WebAppUrls.PrivacyPolicyUrl); 
+        Driver.Url.Should().Be(WebAppUrls.PrivacyPolicyUrl); 
     }
 }

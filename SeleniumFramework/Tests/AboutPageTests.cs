@@ -8,28 +8,16 @@ namespace SeleniumFramework.Tests;
 [TestFixture]
 [Parallelizable(ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
-public class AboutPageTests
+public class AboutPageTests : BaseTest
 {
-    private WebDriverFactory _webDriverFactory;
-    private IWebDriver _driver;
     private AboutPage _aboutPage;
 
     [SetUp]
     public void Setup()
     {
-        _webDriverFactory = new WebDriverFactory();
-        _driver = _webDriverFactory.GetWebDriver();
-
-        _aboutPage = new AboutPage(_driver);
+        _aboutPage = new AboutPage(Driver);
     }
-
-    [TearDown]
-    public void TearDown()
-    {
-        _driver.Quit();
-        _driver.Dispose();
-    }
-
+    
     [Test]
     public void AboutPage_MainSection_ShouldContainExpectedText()
     {

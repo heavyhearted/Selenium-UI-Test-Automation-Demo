@@ -9,27 +9,15 @@ namespace SeleniumFramework.Tests;
 [TestFixture]
 [Parallelizable(ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
-public class BlogPageTests
+public class BlogPageTests : BaseTest
 {
-    private WebDriverFactory _webDriverFactory;
-    private IWebDriver _driver;
     private BlogPage _blogPage;
 
     [SetUp]
     public void Setup()
     {
-        _webDriverFactory = new WebDriverFactory();
-        _driver = _webDriverFactory.GetWebDriver();
-        _blogPage = new BlogPage(_driver);
+        _blogPage = new BlogPage(Driver);
     }
-
-    [TearDown]
-    public void TearDown()
-    {
-        _driver.Quit();
-        _driver.Dispose();
-    }
-
     
     [Test]
     public void BlogPage_Content_ShouldContainExpectedElements()
@@ -59,7 +47,7 @@ public class BlogPageTests
         _blogPage.SearchForArticle(searchQuery);
 
         var expectedUrl = WebAppUrlValidationHelper.GenerateSearchUrl(searchQuery);
-        var actualUrl = _driver.Url;
+        var actualUrl = Driver.Url;
         actualUrl.Should().Be(expectedUrl);
         _blogPage.AreArticlesPresent().Should().BeTrue();
     }

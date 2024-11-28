@@ -8,29 +8,16 @@ namespace SeleniumFramework.Tests;
 [TestFixture]
 [Parallelizable(ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
-public class ServicesPageTests
+public class ServicesPageTests : BaseTest
 {
-    private WebDriverFactory _webDriverFactory;
-    private IWebDriver _driver;
     private ServicesPage _servicesPage;
     
     [SetUp]
     public void Setup()
     {
-        _webDriverFactory = new WebDriverFactory();
-        _driver = _webDriverFactory.GetWebDriver();
-        
-        _servicesPage = new ServicesPage(_driver);
+        _servicesPage = new ServicesPage(Driver);
     }
     
-    [TearDown]
-    public void TearDown()
-    {
-        _driver.Quit(); 
-        _driver.Dispose(); 
-    }
-    
-
     [Test]
     public void ServicesPage_HeroSection_ShouldContainExpectedElements()
     {
@@ -82,8 +69,8 @@ public class ServicesPageTests
 
         _servicesPage.ClickDiscoverySessionButton();
         
-        _driver.SwitchToNewWindow(ServicesPage.DiscoveryButtonRedirectUrl);
+        Driver.SwitchToNewWindow(ServicesPage.DiscoveryButtonRedirectUrl);
 
-        _driver.Url.Should().Be(ServicesPage.DiscoveryButtonRedirectUrl);
+        Driver.Url.Should().Be(ServicesPage.DiscoveryButtonRedirectUrl);
     }
 }
